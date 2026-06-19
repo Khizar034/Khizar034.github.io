@@ -138,7 +138,59 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+}
+
+.contact-reveal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.contact-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(110, 231, 183, 0.25);
+  background: var(--accent-dim);
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.15s;
+}
+
+.contact-item:hover {
+  border-color: rgba(110, 231, 183, 0.5);
+  transform: translateY(-1px);
+}
+
+.contact-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.contact-value {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+button.btn {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .btn {

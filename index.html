@@ -34,7 +34,17 @@
       </p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#projects">View my work</a>
-        <a class="btn btn-ghost" href="mailto:khankhizar034@gmail.com">Get in touch</a>
+        <button type="button" class="btn btn-ghost" id="contact-toggle" aria-expanded="false" aria-controls="contact-reveal">Get in touch</button>
+      </div>
+      <div class="contact-reveal" id="contact-reveal" hidden>
+        <a class="contact-item" href="tel:+923345104900">
+          <span class="contact-label">Phone</span>
+          <span class="contact-value">03345104900</span>
+        </a>
+        <a class="contact-item" href="mailto:khankhizar034@gmail.com">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">khankhizar034@gmail.com</span>
+        </a>
       </div>
       <dl class="stats">
         <div>
@@ -173,6 +183,7 @@
         <h2>Let's connect</h2>
         <p>Open to collaborations, freelance work, and interesting product builds.</p>
         <div class="contact-links">
+          <a class="btn btn-primary" href="tel:+923345104900">03345104900</a>
           <a class="btn btn-primary" href="mailto:khankhizar034@gmail.com">khankhizar034@gmail.com</a>
           <a class="btn btn-ghost" href="https://github.com/Khizar034" target="_blank" rel="noopener noreferrer">github.com/Khizar034</a>
         </div>
@@ -186,6 +197,16 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const contactToggle = document.getElementById('contact-toggle');
+    const contactReveal = document.getElementById('contact-reveal');
+
+    contactToggle.addEventListener('click', () => {
+      const isOpen = contactReveal.hidden;
+      contactReveal.hidden = !isOpen;
+      contactToggle.setAttribute('aria-expanded', String(isOpen));
+      contactReveal.classList.toggle('is-visible', isOpen);
+    });
   </script>
 </body>
 </html>
